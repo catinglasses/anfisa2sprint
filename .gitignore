@@ -135,3 +135,6 @@ dmypy.json
 #databases
 .sqlite
 .sqlite3
+
+#fixtures
+db.json
