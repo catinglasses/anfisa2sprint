@@ -8,7 +8,7 @@ class Category(PublishedModel):
     slug = models.SlugField(max_length=64, unique=True, verbose_name='Слаг')
     output_order = models.PositiveSmallIntegerField(
         default=100,
-        verbose_name='Порядок отображения'
+            
         )
 
     class Meta:
@@ -30,10 +30,15 @@ class Topping(PublishedModel):
         return self.title
 
 class Wrapper(PublishedModel):
-    title = models.CharField(max_length=256, verbose_name='Название')
+    title = models.CharField(
+        max_length=256, 
+        verbose_name='Название',
+        help_text='Уникальное название обёртки, не более 256 символов'
+    )
+
 
     class Meta:
-        verbose_name = 'обёртка'
+        verbose_name = 'Объект "обёртка"'
         verbose_name_plural = 'Обёртки'
 
     def __str__(self):
